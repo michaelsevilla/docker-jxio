@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e
+
+if [ -z "$GIT_URL"] ; then
+  GIT_URL="https://github.com/accelio/JXIO.git"
+fi
+
+cd /
+if [ ! -d /JXIO/.git ]; then
+    git clone $GIT_URL
+fi
+
+cd /JXIO
+git clean -fd
+./build.sh
+
