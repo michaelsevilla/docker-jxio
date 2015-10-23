@@ -11,18 +11,20 @@ To build JXIO:
     docker run -it \
         --name jxio \
         -v `pwd`/JXIO:/JXIO \
-        jxio
+        michaelsevilla/jxiodev-build
     
 To start JXIO server:
 
     docker ps -aq | xargs docker stop
     docker ps -aq | xargs docker rm
     docker run -it \
-    --name jxio \
-    --net=host \
-    -v `pwd`/JXIO:/JXIO \
-    --entrypoint=/bin/bash \
-    jxio
+        --name jxio \
+        --net=host \
+        -v `pwd`/JXIO:/JXIO \
+        --entrypoint=/bin/bash \
+        michaelsevilla/jxiodev-build
+
+This will drop you into a shell where you can run JXIO:
 
     /JXIO/examples/runHelloWorld.sh server localhost 1234
     /JXIO/examples/runHelloWorld.sh client localhost 1234 
