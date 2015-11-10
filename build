@@ -2,7 +2,7 @@
 set -e
 
 if [ -z "$GIT_URL"] ; then
-  GIT_URL="https://github.com/accelio/JXIO.git"
+  GIT_URL="https://github.com/michaelsevilla/JXIO.git"
 fi
 
 cd /
@@ -11,6 +11,7 @@ if [ ! -d /JXIO/.git ]; then
 fi
 
 cd /JXIO
+git pull
 git clean -fd
 ./build.sh
 
