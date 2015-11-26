@@ -6,23 +6,23 @@ Quickstart
 
 To build JXIO:
 
-    docker ps -aq | xargs docker stop
-    docker ps -aq | xargs docker rm
+    ```bash
     docker run -it \
         --name jxio \
         -v `pwd`/JXIO:/JXIO \
         michaelsevilla/jxiodev-build
-    
+    ```
+
 To start JXIO server:
 
-    docker ps -aq | xargs docker stop
-    docker ps -aq | xargs docker rm
+    ```bash
     docker run -it \
         --name jxio \
         --net=host \
         -v `pwd`/JXIO:/JXIO \
         --entrypoint=/bin/bash \
         michaelsevilla/jxiodev-build
+    ```
 
 This will drop you into a shell where you can run JXIO:
 
